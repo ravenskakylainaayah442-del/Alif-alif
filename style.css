@@ -83,46 +83,45 @@ header {
     display: block;
 }
 
-/* Menu Navigasi */
-#navMenu {
+nav ul, #navMenu {
     display: flex;
     list-style: none;
     gap: 2rem;
     align-items: center;
 }
 
-/* Teks menu selalu putih (tidak biru/ungu) */
-#navMenu a.nav-link,
-#navMenu a.nav-link:visited {
-    color: #ffffff;
-    text-decoration: none;
+/* Memaksa teks link menu navigasi selalu putih/cream (tidak biru/ungu) */
+nav ul li a, #navMenu li a, .nav-link {
+    color: #FFF5E1 !important;
+    text-decoration: none !important;
     font-size: 0.95rem;
     transition: color 0.3s;
 }
 
-#navMenu a.nav-link:hover {
-    color: var(--champagne);
+nav ul li a:visited, #navMenu li a:visited, .nav-link:visited,
+nav ul li a:active, #navMenu li a:active, .nav-link:active,
+nav ul li a:focus, #navMenu li a:focus, .nav-link:focus {
+    color: #FFF5E1 !important;
 }
 
-/* Tombol Konsultasi tetap burgundy di atas champagne */
-#navMenu a.cta-header,
-#navMenu a.cta-header:visited {
-    color: var(--burgundy-deep);
-    text-decoration: none;
+nav ul li a:hover, #navMenu li a:hover, .nav-link:hover {
+    color: #DFC39D !important;
 }
 
 .cta-header {
-    background-color: var(--champagne);
-    color: var(--burgundy-deep);
+    background-color: var(--champagne) !important;
+    color: var(--burgundy-deep) !important;
     padding: 0.5rem 1.25rem;
     border-radius: 4px;
     font-weight: 600;
     transition: opacity 0.3s;
-    text-decoration: none;
+    text-decoration: none !important;
+    display: inline-block;
 }
 
 .cta-header:hover {
     opacity: 0.9;
+    color: var(--burgundy-deep) !important;
 }
 
 .hero-cta {
@@ -591,7 +590,7 @@ footer p {
     .hero h2 {
         font-size: 2.25rem;
     }
-    #navMenu {
+    nav ul, #navMenu {
         display: none;
         flex-direction: column;
         position: absolute;
@@ -600,11 +599,10 @@ footer p {
         width: 100%;
         background: var(--burgundy-deep);
         padding: 1.5rem;
-        gap: 1rem;
         box-shadow: 0 10px 15px rgba(0,0,0,0.3);
         border-top: 1px solid rgba(223,195,157,0.2);
     }
-    #navMenu.active {
+    nav ul.active, #navMenu.active {
         display: flex;
     }
     .menu-toggle {
